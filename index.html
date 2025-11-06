@@ -6,19 +6,19 @@
 </head>
 <body>
 
-<!-- Taula de l'horari feta amb HTML bàsic -->
+<!-- Taula de l'horari (HTML senzill sense CSS extern) -->
 <table border="1" cellspacing="0" cellpadding="5">
 
-    <!-- Fila del títol general -->
+    <!-- Títol principal que ocupa totes les columnes -->
     <tr>
         <th colspan="6" style="background-color:#6fbf4b;">
             ASIX1-DAW1 (matí) 301
         </th>
     </tr>
 
-    <!-- Capsaleres dels dies de la setmana -->
+    <!-- Capsaleres dels dies -->
     <tr>
-        <th></th> <!-- Columna d'hores -->
+        <th></th> <!-- Columna només per a les hores -->
         <th>Dilluns</th>
         <th>Dimarts</th>
         <th>Dimecres</th>
@@ -78,9 +78,9 @@
         </td>
     </tr>
 
-    <!-- Pati / Descans -->
+    <!-- Pati (fila fusionada) -->
     <tr>
-        <!-- Aquí ajunto totes les columnes per indicar el pati -->
+        <!-- Aquí faig servir colspan per ajuntar tota la fila del pati -->
         <td colspan="6" style="text-align:center; background-color:#eeeeee;">
             Pati
         </td>
@@ -92,18 +92,18 @@
         <td style="background-color:#dde5ff;">
             0377 Ad.Sis.G.BD<br>301<br>Agnès<br>ASIX1
         </td>
-        <!-- rowspan perquè OP202 ocupa dues hores seguides dimarts -->
-        <td rowspan="2" style="background-color:#f4bfdc;">
+        <!-- OP202 ocupa tres hores seguides dimarts -->
+        <td rowspan="3" style="background-color:#f4bfdc;">
             OP202 Prog.<br>301<br>Fatima/Alejandro<br>ASIX1
         </td>
-        <!-- rowspan perquè Gest.BBDD ocupa tres franges el dimecres -->
+        <!-- Gest.BBDD ocupa tres hores seguides dimecres -->
         <td rowspan="3" style="background-color:#dde5ff;">
             0372 Gest.BBDD<br>301<br>Agnès/Alejandro<br>ASIX1
         </td>
         <td style="background-color:#b7e0ff;">
             0179 Anglès<br>301<br>Alex<br>ASIX1
         </td>
-        <!-- rowspan perquè Imp. Appl.Web ocupa dues hores divendres -->
+        <!-- Imp. Appl.Web ocupa dues hores divendres -->
         <td rowspan="2" style="background-color:#dde5ff;">
             0376 Imp. Appl.Web<br>301<br>Alberto/Alejandro<br>ASIX1
         </td>
@@ -115,9 +115,11 @@
         <td style="background-color:#dde5ff;">
             0372 Gest.BBDD<br>301<br>Agnès<br>ASIX1
         </td>
+        <!-- OP202 (dimarts) i Gest.BBDD (dimecres) venen del rowspan anterior -->
         <td style="background-color:#dde5ff;">
             0373 Lleng. Marqués<br>301<br>Alberto<br>ASIX1
         </td>
+        <!-- Imp. Appl.Web (divendres) també ve del rowspan -->
     </tr>
 
     <!-- 13:05 - 14:00 -->
@@ -126,14 +128,9 @@
         <td style="background-color:#f6d5b5;">
             1635 Digit.<br>301<br>Alberto<br>ASIX1
         </td>
-        <td style="background-color:#f4bfdc;">
-            OP202 Prog.<br>301<br>Fatima/Alejandro<br>ASIX1
-        </td>
-        <!-- Aquí segueix Gest.BBDD per la tercera hora (rowspan de dalt) -->
-        <td></td> <!-- buit perquè el contingut ja el marca el rowspan -->
-        <td style="background-color:#dde5ff;">
-            0373 Lleng. Marqués<br>301<br>Alberto<br>ASIX1
-        </td>
+        <!-- OP202 Prog. segueix (rowspan) dimarts -->
+        <!-- Gest.BBDD segueix (rowspan) dimecres -->
+        <td></td> <!-- Dijous sense classe en aquest tram -->
         <td style="background-color:#dde5ff;">
             0373 Lleng. Marqués<br>301<br>Alberto<br>ASIX1
         </td>
