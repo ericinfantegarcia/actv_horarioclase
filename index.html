@@ -1,29 +1,45 @@
 <!DOCTYPE html>
-<html lang="ca">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <title>Horari ASIX1-DAW1 (matí) 301</title>
 </head>
 <body>
 
-<!-- Taula de l'horari (HTML senzill sense CSS extern) -->
-<table border="1" cellspacing="0" cellpadding="5">
+<!--
+    Tabla del horario hecha solo con HTML.
+    Sin CSS externo ni cosas raras, para que se vea claro en la entrega.
+-->
+<table border="1" cellspacing="0" cellpadding="8" style="width:1200px; border-collapse:collapse;">
 
-    <!-- Títol principal que ocupa totes les columnes -->
+    <!--
+        colgroup: aquí marco el ancho aproximado de cada columna.
+        Esto ayuda a que la tabla se parezca más al horario original impreso.
+    -->
+    <colgroup>
+        <col style="width:120px;">   <!-- columna de horas -->
+        <col style="width:216px;">   <!-- lunes -->
+        <col style="width:216px;">   <!-- martes -->
+        <col style="width:216px;">   <!-- miércoles -->
+        <col style="width:216px;">   <!-- jueves -->
+        <col style="width:216px;">   <!-- viernes -->
+    </colgroup>
+
+    <!-- Fila del título principal, ocupa todas las columnas con colspan -->
     <tr>
         <th colspan="6" style="background-color:#6fbf4b;">
             ASIX1-DAW1 (matí) 301
         </th>
     </tr>
 
-    <!-- Capsaleres dels dies -->
+    <!-- Encabezado con los días de la semana -->
     <tr>
-        <th></th> <!-- Columna només per a les hores -->
-        <th>Dilluns</th>
-        <th>Dimarts</th>
-        <th>Dimecres</th>
-        <th>Dijous</th>
-        <th>Divendres</th>
+        <th></th> <!-- celda vacía para la columna de horas -->
+        <th>Lunes</th>
+        <th>Martes</th>
+        <th>Miércoles</th>
+        <th>Jueves</th>
+        <th>Viernes</th>
     </tr>
 
     <!-- 8:00 - 8:55 -->
@@ -78,9 +94,8 @@
         </td>
     </tr>
 
-    <!-- Pati (fila fusionada) -->
+    <!-- Fila del recreo: uso colspan para unir todas las celdas -->
     <tr>
-        <!-- Aquí faig servir colspan per ajuntar tota la fila del pati -->
         <td colspan="6" style="text-align:center; background-color:#eeeeee;">
             Pati
         </td>
@@ -92,18 +107,28 @@
         <td style="background-color:#dde5ff;">
             0377 Ad.Sis.G.BD<br>301<br>Agnès<br>ASIX1
         </td>
-        <!-- OP202 ocupa tres hores seguides dimarts -->
+
+        <!--
+            OP202 Prog. ocupa tres horas seguidas el martes,
+            por eso uso rowspan="3" y no repito la celda en las filas de abajo.
+        -->
         <td rowspan="3" style="background-color:#f4bfdc;">
             OP202 Prog.<br>301<br>Fatima/Alejandro<br>ASIX1
         </td>
-        <!-- Gest.BBDD ocupa tres hores seguides dimecres -->
+
+        <!--
+            0372 Gest.BBDD también ocupa tres franjas el miércoles.
+            Mismo truco con rowspan.
+        -->
         <td rowspan="3" style="background-color:#dde5ff;">
             0372 Gest.BBDD<br>301<br>Agnès/Alejandro<br>ASIX1
         </td>
+
         <td style="background-color:#b7e0ff;">
             0179 Anglès<br>301<br>Alex<br>ASIX1
         </td>
-        <!-- Imp. Appl.Web ocupa dues hores divendres -->
+
+        <!-- 0376 Imp. Appl.Web ocupa dos horas seguidas el viernes -->
         <td rowspan="2" style="background-color:#dde5ff;">
             0376 Imp. Appl.Web<br>301<br>Alberto/Alejandro<br>ASIX1
         </td>
@@ -115,22 +140,31 @@
         <td style="background-color:#dde5ff;">
             0372 Gest.BBDD<br>301<br>Agnès<br>ASIX1
         </td>
-        <!-- OP202 (dimarts) i Gest.BBDD (dimecres) venen del rowspan anterior -->
+        <!-- Aquí va Lenguaje Marcas del jueves -->
         <td style="background-color:#dde5ff;">
             0373 Lleng. Marqués<br>301<br>Alberto<br>ASIX1
         </td>
-        <!-- Imp. Appl.Web (divendres) també ve del rowspan -->
+        <!-- Viernes sigue con Imp. Appl.Web por el rowspan de arriba -->
     </tr>
 
     <!-- 13:05 - 14:00 -->
     <tr>
         <td>13:05 - 14:00</td>
+
+        <!-- Última hora del lunes -->
         <td style="background-color:#f6d5b5;">
             1635 Digit.<br>301<br>Alberto<br>ASIX1
         </td>
-        <!-- OP202 Prog. segueix (rowspan) dimarts -->
-        <!-- Gest.BBDD segueix (rowspan) dimecres -->
-        <td></td> <!-- Dijous sense classe en aquest tram -->
+
+        <!--
+            En esta fila no creo nuevas celdas para martes y miércoles
+            porque siguen ocupadas por los rowspan de OP202 y Gest.BBDD.
+        -->
+
+        <!-- Jueves a esta hora queda vacío -->
+        <td></td>
+
+        <!-- Viernes: aquí sí va Lenguaje Marcas -->
         <td style="background-color:#dde5ff;">
             0373 Lleng. Marqués<br>301<br>Alberto<br>ASIX1
         </td>
