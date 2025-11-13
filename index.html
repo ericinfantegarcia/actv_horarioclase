@@ -3,14 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Horari ASIX1-DAW1 (matí) 301</title>
+
+    <style>
+        /* Estilos solo para esta página, sin CSS externo */
+        table {
+            width: 1200px;
+            border-collapse: collapse;
+            border: 1px solid black; /* reemplaza border="1" */
+        }
+
+        th, td {
+            border: 1px solid black; /* bordes de las celdas */
+            padding: 8px;            /* reemplaza cellpadding="8" */
+        }
+
+        table {
+            border-spacing: 0;       /* reemplaza cellspacing="0" */
+        }
+    </style>
 </head>
 <body>
 
 <!--
-    Tabla del horario hecha solo con HTML.
-    Sin CSS externo ni cosas raras, para que se vea claro en la entrega.
+    Tabla del horario hecha con HTML + un poco de CSS interno.
 -->
-<table border="1" cellspacing="0" cellpadding="8" style="width:1200px; border-collapse:collapse;">
+<table>
 
     <!--
         colgroup: aquí marco el ancho aproximado de cada columna.
@@ -108,18 +125,12 @@
             0377 Ad.Sis.G.BD<br>301<br>Agnès<br>ASIX1
         </td>
 
-        <!--
-            OP202 Prog. ocupa tres horas seguidas el martes,
-            por eso uso rowspan="3" y no repito la celda en las filas de abajo.
-        -->
+        <!-- OP202 Prog. ocupa tres horas seguidas el martes -->
         <td rowspan="3" style="background-color:#f4bfdc;">
             OP202 Prog.<br>301<br>Fatima/Alejandro<br>ASIX1
         </td>
 
-        <!--
-            0372 Gest.BBDD también ocupa tres franjas el miércoles.
-            Mismo truco con rowspan.
-        -->
+        <!-- 0372 Gest.BBDD también ocupa tres franjas el miércoles -->
         <td rowspan="3" style="background-color:#dde5ff;">
             0372 Gest.BBDD<br>301<br>Agnès/Alejandro<br>ASIX1
         </td>
@@ -140,7 +151,7 @@
         <td style="background-color:#dde5ff;">
             0372 Gest.BBDD<br>301<br>Agnès<br>ASIX1
         </td>
-        <!-- Aquí va Lenguaje Marcas del jueves -->
+        <!-- Lenguaje Marcas del jueves -->
         <td style="background-color:#dde5ff;">
             0373 Lleng. Marqués<br>301<br>Alberto<br>ASIX1
         </td>
@@ -156,10 +167,7 @@
             1635 Digit.<br>301<br>Alberto<br>ASIX1
         </td>
 
-        <!--
-            En esta fila no creo nuevas celdas para martes y miércoles
-            porque siguen ocupadas por los rowspan de OP202 y Gest.BBDD.
-        -->
+        <!-- Martes y miércoles siguen ocupados por los rowspan -->
 
         <!-- Jueves a esta hora queda vacío -->
         <td></td>
